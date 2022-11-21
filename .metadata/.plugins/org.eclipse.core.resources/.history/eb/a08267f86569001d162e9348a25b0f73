@@ -1,0 +1,24 @@
+package com.nri.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+
+	//locailhost/ispringwebmvc/about
+	//Handler
+	@RequestMapping(value="/home")
+	public String getHome() {
+		
+		return "index";
+	}
+	
+	@RequestMapping(value="/about")
+	public String getAbout() {
+		
+		return "about";
+	}
+	
+	
+}

@@ -1,0 +1,43 @@
+package com.nri.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class HomeController {
+
+	// locailhost/ispringwebmvc/about
+	// Handler
+	@RequestMapping(value = "/")
+	public String getHome() {
+
+		return "index";
+	}
+
+	// Model vs ModelAndView(Predefined classes)
+	@RequestMapping(value = "/about")
+	public String getAbout(Model model) {
+		// key value pair
+		model.addAttribute("cname","nriFintech");
+		return "about";
+	}
+	
+	@RequestMapping(value = "/feedback")
+	public ModelAndView getFeedback(Model model) {
+		System.out.println("sending data from controller to view using ModelAndView");
+		ModelAndView mview = new ModelAndView();
+		mview.addObject("MyName","Manshi");
+		mview.setViewName("feedback");
+		return mview;
+	}
+
+	// not a view
+	@ResponseBody
+	@RequestMapping(value = "/msg")
+	public String showMsg() {
+		return "welcome";
+	}
+}
