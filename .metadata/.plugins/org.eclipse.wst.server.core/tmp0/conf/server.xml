@@ -152,7 +152,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="D:\SpringMVC\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\SpringMVC\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\I_SpringWebMVCApp" path="/I_SpringWebMVCApp" reloadable="true" source="org.eclipse.jst.j2ee.server:I_SpringWebMVCApp"/><Context docBase="D:\SpringMVC\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\II_SpringWebMVCApp" path="/II_SpringWebMVCApp" reloadable="true" source="org.eclipse.jst.j2ee.server:II_SpringWebMVCApp"/></Host>
+      <Context docBase="D:\SpringMVC\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\SpringMVC\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\IV_SpringMVCValidExHandler" path="/IV_SpringMVCValidExHandler" reloadable="true" source="org.eclipse.jst.j2ee.server:IV_SpringMVCValidExHandler"/></Host>
     </Engine>
   </Service>
 </Server>
