@@ -17,7 +17,8 @@
 
 	<context:component-scan base-package="com.nri" />
 	<mvc:annotation-driven />
-	<tx:annotation-driven />
+	<tx:annotation-driven proxy-target-class="true"
+		transaction-manager="transactionManager" />
 
 	<bean name="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -28,7 +29,7 @@
 	</bean>
 
 
-<bean name="viewResolver"
+	<bean name="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
 		<property name="prefix" value="WEB-INF/views/" />
@@ -38,7 +39,8 @@
 
 	<bean name="ds"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver
 		"></property>
 		<property name="url"
 			value="jdbc:oracle:thin:@localhost:1521:xe"></property>
@@ -52,9 +54,9 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="dialect">org.hibernate.dialect.Oracle12Dialect</prop>
-    			<prop key="hibernate.hbm2ddl.auto">update</prop>
-    			<prop key="hibernate.show_sql">true</prop>
-    			<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
 
 			</props>
 
@@ -70,13 +72,13 @@
 		class="org.springframework.orm.hibernate5.HibernateTemplate">
 		<property name="sessionFactory" ref="factory"></property>
 	</bean>
-	
-	<bean name="reservDao" class="com.nri.dao.ReservationDaoImpl">
-		<property name ="hibernateTemplate" ref="hibernateTemplate"></property>
+
+	<bean name="rdaoobj" class="com.nri.dao.ReservationDaoImpl">
 	</bean>
-	
-	<bean name="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-	<property name="sessionFactory" ref="factory"></property>
+
+	<bean name="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="factory"></property>
 	</bean>
 
 
