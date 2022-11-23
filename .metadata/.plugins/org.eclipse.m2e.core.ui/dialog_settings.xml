@@ -33,6 +33,7 @@
 			<item value="com.nri"/>
 		</list>
 		<list key="artifactId">
+			<item value="SpringMVCAPIEndpoints"/>
 			<item value="IV_SpringMVCValidExHandler"/>
 			<item value="III_SpringMVCFormHT"/>
 			<item value="II_SpringWebMVCApp"/>
